@@ -27,21 +27,34 @@ body {
   color: white;
   font-weight: bold;
   font-size: clamp(20px, 1.7vw, 76px);
-  padding: 2vw;
   grid-template-rows: min-content min-content min-content;
-  gap: 4vw;
 }
 
 #sidebar ul {
   list-style: none;
   display: grid;
   gap: 2vw;
+  padding: 2vw;
+  padding-bottom: 3vw;
 }
 
 li {
-  display: flex;
+  display: grid;
+  grid-template-columns: min-content min-content;
   align-items: center;
   gap: 2vw;
+}
+
+#dashboard {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  align-items: center;
+  gap: 0.8vw;
+  padding: 1vw;
+}
+
+#dashboard img {
+  height: clamp(42px, 3.7vw, 120px);
 }
 
 li img {
