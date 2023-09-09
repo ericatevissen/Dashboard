@@ -5,22 +5,24 @@
 
 body {
   font-family: 'Roboto', Helvetica, sans-serif, Arial;
+  background-color: #e2e8f0;
 }
 
 #container {
   display: grid;
-  grid-template: 2fr 5fr / 1fr 3fr 1fr;
+  grid-template: max-content max-content / 1fr 3fr 1fr;
 }
 
 #header {
   grid-area: 1 / 2 / 2 / 4;
   display: grid;
   grid-template-rows: max-content max-content;
+  background-color: #ffffff;
+  box-shadow: 0 8px 8px #ccd1d8;
 }
 
 #top-header {
-  display: grid;
-  grid-template-columns: max-content max-content;
+  display: flex;
   gap: 7vw;
   padding: 2.5vw;
   padding-top: 1vw;
@@ -28,8 +30,7 @@ body {
 }
 
 #top-header > :first-child {
-  display: grid;
-  grid-template-columns: min-content min-content;
+  display: flex;
   align-items: center;
   gap: 1vw;
 }
@@ -46,8 +47,7 @@ body {
 }
 
 #top-header > :last-child {
-  display: grid;
-  grid-template-columns: max-content max-content max-content;
+  display: flex;
   align-items: center;
   gap: 2vw;
   font-size: clamp(15px, 1.5vw, 100px);
@@ -65,7 +65,9 @@ body {
 #bottom-header {
   display: flex;
   padding: 2.5vw;
+  padding-right: 3.5vw;
   padding-top: 1vw;
+  padding-bottom: 1vw;
   align-items: center;
   gap: 1.5vw;
 }
@@ -96,14 +98,62 @@ body {
 }
 
 #post-buttons > button {
-  width: clamp(100px, 7.5vw, 600px);
-  height: clamp(40px, 3vw, 240px);
+  width: clamp(75px, 7.5vw, 600px);
+  height: clamp(30px, 3vw, 240px);
   border: none;
   border-radius: 4vw;
   background-color: #1992d4;
   color: white;
   font-weight: 600;
-  font-size: clamp(14px, 1.2vw, 93px);
+  font-size: clamp(12px, 1.2vw, 93px);
+}
+
+#projects {
+  gap: 1vw;
+  padding: 1.5vw;
+  padding-top: 2.5vw;
+  display: grid;
+  grid-template-rows: max-content max-content;
+}
+
+#cards {
+  gap: 4vw;
+  row-gap: 2vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 22.8vw);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 12vw;
+  width: 20vw;
+  background-color: #ffffff;
+  padding: 2vw;
+  padding-bottom: 1vw;
+  border-radius: 0.75vw;
+  border-left: 0.8vw solid #f0af18;
+  box-shadow: 5px 5px 5px #ced3d9;
+}
+
+.card p {
+  font-size: clamp(14px, 1.2vw, 87.5px);
+  color: #626262;
+}
+
+.card div {
+  display: flex;
+  gap: 1.5vw;
+  margin-left: auto;
+  margin-top: auto;
+}
+
+.card img {
+  width: 2vw;
+}
+
+#right {
+  display: grid;
 }
 
 #sidebar {
@@ -112,7 +162,7 @@ body {
   display: grid;
   color: white;
   font-weight: bold;
-  font-size: clamp(16px, 1.7vw, 100px);
+  font-size: clamp(12px, 1.7vw, 85px);
   grid-template-rows: min-content min-content min-content;
 }
 
@@ -125,16 +175,14 @@ body {
 }
 
 #sidebar li {
-  display: grid;
-  grid-template-columns: min-content min-content;
+  display: flex;
   align-items: center;
   gap: 2vw;
   font-weight: 500;
 }
 
 #dashboard {
-  display: grid;
-  grid-template-columns: min-content min-content;
+  display: flex;
   align-items: center;
   gap: 0.8vw;
   padding: 1vw;
@@ -149,7 +197,17 @@ li img {
 }
 
 h1 {
-  font-size: clamp(20px, 2.2vw, 100px);
+  font-size: clamp(20px, 2.2vw, 118px);
+  font-weight: 500;
+}
+
+h2 {
+  font-size: clamp(15px, 1.5vw, 93.75px);
+  font-weight: 500;
+}
+
+h3 {
+  font-size: clamp(14px, 1.4vw, 87.5px);
   font-weight: 500;
 }
 
