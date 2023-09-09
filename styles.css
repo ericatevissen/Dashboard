@@ -10,7 +10,7 @@ body {
 
 #container {
   display: grid;
-  grid-template: max-content max-content / 1fr 3fr 1fr;
+  grid-template: max-content max-content / 1fr 3fr max-content;
 }
 
 #header {
@@ -67,7 +67,7 @@ body {
   padding: 2.5vw;
   padding-right: 3.5vw;
   padding-top: 1vw;
-  padding-bottom: 1vw;
+  padding-bottom: 1vmax;
   align-items: center;
   gap: 1.5vw;
 }
@@ -109,31 +109,31 @@ body {
 }
 
 #projects {
-  gap: 1vw;
-  padding: 1.5vw;
-  padding-top: 2.5vw;
+  gap: 1vmax;
+  padding: 1.5vmax;
+  padding-top: 2.5vmax;
   display: grid;
   grid-template-rows: max-content max-content;
 }
 
 #cards {
-  gap: 4vw;
-  row-gap: 2vw;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 22.8vw);
+  gap: 2vw;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card {
+  width: clamp(140px, 16vw, 560px);
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  height: 12vw;
-  width: 20vw;
   background-color: #ffffff;
-  padding: 2vw;
-  padding-bottom: 1vw;
-  border-radius: 0.75vw;
+  padding: 2vmax;
+  padding-bottom: 1vmax;
+  border-radius: 0.75vmax;
   border-left: 0.8vw solid #f0af18;
   box-shadow: 5px 5px 5px #ced3d9;
+  gap: 0.20vmax;
 }
 
 .card p {
@@ -149,11 +149,64 @@ body {
 }
 
 .card img {
-  width: 2vw;
+  width: max(20px, 2vw);
 }
 
 #right {
   display: grid;
+  grid-template-rows: max-content max-content;
+  gap: 2vw;
+  padding-right: 3vw;
+  padding-top: 2.5vmax;
+}
+
+#announcements {
+  display: grid;
+  gap: 1vmax;
+  grid-template-rows: max-content max-content;
+}
+
+#announcements > div {
+  display: grid;
+  grid-template-rows: max-content max-content max-content;
+  width: clamp(130px, 16vmax, 700px);
+  background-color: #ffffff;
+  padding-left: 2vmax;
+  padding-right: 2vmax;
+  border-radius: 0.75vmax;
+}
+
+.announcement {
+  display: flex;
+  flex-direction: column;
+  gap: 0.20vmax;
+  padding-top: 2vmax;
+  padding-bottom: 2vmax;
+}
+
+.announcement:not(:last-child) {
+  border-bottom: 1px solid grey;
+}
+
+.announcement h3 {
+  font-size: clamp(13px, 1.2vw, 86.4px);
+}
+
+.announcement p {
+  font-size: clamp(11px, 1vw, 72px);
+  color: #626262;
+}
+
+#Trending {
+  display: grid;
+  gap: 1vw;
+  grid-template-rows: max-content max-content;
+}
+
+#Trending div {
+  background-color: #ffffff;
+  padding: 2vw;
+  border-radius: 0.75vmax;
 }
 
 #sidebar {
@@ -162,7 +215,7 @@ body {
   display: grid;
   color: white;
   font-weight: bold;
-  font-size: clamp(12px, 1.7vw, 85px);
+  font-size: clamp(16px, 1.7vw, 85px);
   grid-template-rows: min-content min-content min-content;
 }
 
