@@ -227,6 +227,9 @@ body {
 #sidebar {
   grid-area: 1 / 1 / 3 / 2;
   background-color: #0284c7;
+  position: sticky;
+  top: 0;
+  height: 100vh;
   display: grid;
   color: white;
   font-weight: bold;
@@ -300,7 +303,7 @@ a {
   }
 
   #dashboard {
-    padding-bottom: 6vmax;
+    padding-bottom: 16vmax;
   }
 
   #top-header .pfp, #top-header a {
