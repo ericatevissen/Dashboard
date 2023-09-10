@@ -10,7 +10,7 @@ body {
 
 #container {
   display: grid;
-  grid-template: max-content max-content / 1fr 3fr max-content;
+  grid-template: max-content max-content / max-content 1fr max-content;
 }
 
 #header {
@@ -64,12 +64,13 @@ body {
 
 #bottom-header {
   display: flex;
+  flex-wrap: wrap;
   padding: 2.5vw;
   padding-right: 3.5vw;
   padding-top: 1vw;
   padding-bottom: 1vmax;
   align-items: center;
-  gap: 1.5vw;
+  gap: 1.5vmax;
 }
 
 #bottom-header .pfp {
@@ -94,7 +95,7 @@ body {
 
 #post-buttons {
   display: flex;
-  gap: 2vw;
+  gap: 2vmax;
 }
 
 #post-buttons > button {
@@ -123,7 +124,7 @@ body {
 }
 
 .card {
-  width: clamp(140px, 16vw, 560px);
+  width: clamp(80px, 16vw, 420px);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -155,9 +156,10 @@ body {
 #right {
   display: grid;
   grid-template-rows: max-content max-content;
-  gap: 2vw;
+  gap: 2.5vmax;
   padding-right: 3vw;
   padding-top: 2.5vmax;
+  padding-bottom: 2vmax;
 }
 
 #announcements {
@@ -169,7 +171,7 @@ body {
 #announcements > div {
   display: grid;
   grid-template-rows: max-content max-content max-content;
-  width: clamp(130px, 16vmax, 700px);
+  width: clamp(100px, 16vmax, 700px);
   background-color: #ffffff;
   padding-left: 2vmax;
   padding-right: 2vmax;
@@ -197,16 +199,29 @@ body {
   color: #626262;
 }
 
-#Trending {
+#trending > div {
   display: grid;
-  gap: 1vw;
-  grid-template-rows: max-content max-content;
+  grid-template-rows: max-content max-content max-content max-content;
+  gap: 1vmax;
+  width: clamp(100px, 16vmax, 700px);
+  background-color: #ffffff;
+  padding: 2vmax;
+  border-radius: 0.75vmax;
+  font-size: clamp(13px, 1.2vw, 86.4px);
 }
 
-#Trending div {
-  background-color: #ffffff;
-  padding: 2vw;
-  border-radius: 0.75vmax;
+.user {
+  display: flex;
+  align-items: center;
+  gap: 1.35vmax;
+}
+
+.user img {
+  height: 3.5vmax;
+}
+
+.user > div > :last-child {
+  color: #626262;
 }
 
 #sidebar {
@@ -219,19 +234,24 @@ body {
   grid-template-rows: min-content min-content min-content;
 }
 
-#sidebar ul {
+ul {
   list-style: none;
   display: grid;
-  gap: 2vw;
+  gap: 2vmax;
   padding: 2vw;
-  padding-bottom: 3vw;
+  padding-bottom: 3vmax;
 }
 
-#sidebar li {
+li {
   display: flex;
   align-items: center;
   gap: 2vw;
   font-weight: 500;
+}
+
+li > :first-child {
+  display: flex;
+  align-items: center;
 }
 
 #dashboard {
@@ -246,7 +266,7 @@ body {
 }
 
 li img {
-  height: clamp(20px, 1.7vw, 100px);
+  height: clamp(24px, 1.7vw, 100px);
 }
 
 h1 {
@@ -270,6 +290,36 @@ a {
   text-decoration: inherit;
 }
 
+@media (max-width: 600px) {
+  li > :last-child {
+    display: none;
+  }
+
+  #dashboard h1 {
+    display: none;
+  }
+
+  #dashboard {
+    padding-bottom: 6vmax;
+  }
+
+  #top-header .pfp, #top-header a {
+    display: none;
+  }
+
+  #post-buttons {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #trending > div {
+    width: clamp(60px, 12vmax, 700px);
+  }
+
+  #announcements > div {
+    width: clamp(60px, 12vmax, 700px);
+  }
+}
 /* roboto-100 - latin */
 @font-face {
 font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
