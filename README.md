@@ -1,2 +1,2 @@
-# AdminDashboard
-Admin dashboard layout.
+# Dashboard
+Dashboard layout
